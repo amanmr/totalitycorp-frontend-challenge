@@ -1,0 +1,11 @@
+.purchased{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+.purchased>p{
+    padding: 1rem;
+}
