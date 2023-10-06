@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# E-commerce Website - Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Tech Stack Used - ReactJS
 
-## Available Scripts
 
-In the project directory, you can run:
+## `Features of this app` 
 
-### `npm start`
+### Product Listing: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Displays a variety of products with images, names, prices, and "Add to Cart" buttons. Implemented filters to allow users to sort products by category, price range, or ratings. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Shopping Cart: 
 
-### `npm test`
+Implemented a cart section to display the added products, quantities, and total cost. Users can increase, decrease, or remove items from the cart. 
+Displayed real-time updates of the cart total and item count. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Checkout: 
 
-### `npm run build`
+Implemented a checkout process that calculates the total cost of items in the cart. Users can enter shipping information and payment details. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Responsive Design: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ensured the website is responsive and works seamlessly on both desktop and mobile devices. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Optimized the layout for different screen sizes. 
 
-### `npm run eject`
+## `Working`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### App.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. I have created an array of dummy products of different categories with fields - ID, Name, Price, Rating, Image and Category.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. In App.js file, I have created Routes to display different components- Home, Cart, Checkout with Navbar as parent.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Created a global state to store cart items using context. I used context to prevent prop drilling.
 
-## Learn More
+### Homepage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. This is the place where all the products are available.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. This component accepts products array along with cartContext(contains cart items array and function to change cart state).
 
-### Code Splitting
+3. Implemented Sort functionality using the sort function in javascript.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Applied the filters on initial products according to user input and updated the resultant items to be displayed on the screen , stored the same in state so that the component re-renders on each filter change.
 
-### Analyzing the Bundle Size
+5. Prevented adding same item multiple times by checking if that item already exist in the cart.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+6. Handled edge case - when a given filter resulted in null items then displayed suitable message. 
 
-### Making a Progressive Web App
+### Cart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. This accepts cartContext.
 
-### Advanced Configuration
+2. Calculated total price from the items present in the cart. As cart data is stored in state, whenever an item is added or removed, total price is updated accordingly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Added a link to checkout form when the user clicks on the button to checkout.
 
-### Deployment
+4. Checkout form is displayed with the total cart value. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. I have intentionally not applied any form validation to test the app and also to allow you the test my app too 😀. 

@@ -5,9 +5,12 @@ import FilterOptions from './FilterOptions'
 import Item from './Item'
 
 function Main  ({products}) {
+  
   const categoryMap=["","Mobiles","Accessories","Electronics","Men","Women","Furniture"]
   const [category,setCategory]=useState(1);
   const [sort,setSort]=useState("1");
+  const [filteredProducts,setFilteredProducts]=useState([products]);
+
   const [priceFilter,setPriceFilter]=useState({
     min:0,
     max:1000000
@@ -27,7 +30,7 @@ function Main  ({products}) {
     }
   }
   
-  const [filteredProducts,setFilteredProducts]=useState([products]);
+  
 
   useEffect(()=>{
     const newProducts=products.filter((product)=> product.category==categoryMap[category] && product.price>=priceFilter.min && product.price<=priceFilter.max )

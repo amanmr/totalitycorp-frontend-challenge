@@ -50,6 +50,7 @@
     }
     .categories >:first-child{
         width: fit-content;
+        width: -moz-fit-content;
         cursor:default;
     }
     .menu-mobile li:not(:first-child){

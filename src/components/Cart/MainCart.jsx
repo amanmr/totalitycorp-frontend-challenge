@@ -10,7 +10,6 @@ function MainCart() {
   let totalprice=0;
   const cartItems=useContext(cartContext);
   const cartProducts=cartItems.cart;
-  console.log(cartProducts)
   cartProducts.forEach(product => {
     totalprice+=product.price*product.count;
     cartItems.setTotal(totalprice)
@@ -24,7 +23,6 @@ function MainCart() {
         {totalprice>0 && <div className="summary-cart">
             <PriceSummary total={totalprice}/>
         </div>}
-        
     </div>
   )
 }
